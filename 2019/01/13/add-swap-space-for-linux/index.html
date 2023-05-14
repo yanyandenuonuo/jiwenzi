@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>add swap space for linux | 记文字</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Reference document:  https:&#x2F;&#x2F;askubuntu.com&#x2F;a&#x2F;1075516 How To Add Swap Space on Ubuntu 18.04  If you use a server with smaller memory, you can add a swap space for it.  execute sudo swapon --show, if th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="add swap space for linux">
+<meta property="og:url" content="https://jiwenzi.com/2019/01/13/add-swap-space-for-linux/index.html">
+<meta property="og:site_name" content="记文字">
+<meta property="og:description" content="Reference document:  https:&#x2F;&#x2F;askubuntu.com&#x2F;a&#x2F;1075516 How To Add Swap Space on Ubuntu 18.04  If you use a server with smaller memory, you can add a swap space for it.  execute sudo swapon --show, if th">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-01-13T13:04:51.000Z">
+<meta property="article:modified_time" content="2022-12-12T10:15:46.061Z">
+<meta property="article:author" content="枫语疯言">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Swap">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">记文字</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiwenzi.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-add-swap-space-for-linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/13/add-swap-space-for-linux/" class="article-date">
+  <time datetime="2019-01-13T13:04:51.000Z" itemprop="datePublished">2019-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      add swap space for linux
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Reference document:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://askubuntu.com/a/1075516">https://askubuntu.com/a/1075516</a></li>
+<li><a target="_blank" rel="noopener" href="https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04">How To Add Swap Space on Ubuntu 18.04</a></li>
+</ul>
+<p>If you use a server with smaller memory, you can add a swap space for it.</p>
+<ol>
+<li>execute <code>sudo swapon --show</code>, if there already exist swap file, you need delete it as following: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo swapoff $swapfile</span><br><span class="line">$ sudo rm $swapfile</span><br></pre></td></tr></table></figure></li>
+<li>sudo dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;$swapfile bs&#x3D;1M count&#x3D;8192</li>
+<li>sudo chmod 600 $swapfile</li>
+<li>sudo mkswap $swapfile</li>
+<li>sudo swapon $swapfile</li>
+</ol>
+<p>Now you can execute <code>sudo swapon --show</code> or <code>free -m</code> to ensure it.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiwenzi.com/2019/01/13/add-swap-space-for-linux/" data-id="clhna8vxc000bph8kc5dvgmji" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swap/" rel="tag">Swap</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/16/start-https-with-Let-s-Encrypt/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          start https with Let&#39;s Encrypt
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/13/tmux-config/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">tmux config</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 枫语疯言<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

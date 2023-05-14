@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vim config | 记文字</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="your can modify the vim global config for all user or modify the local config for single user. the global config path is &#x2F;etc&#x2F;vim, you can touch a new file named vimrc.local 1234567891011121314151617">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim config">
+<meta property="og:url" content="https://jiwenzi.com/2019/01/16/vim-config/index.html">
+<meta property="og:site_name" content="记文字">
+<meta property="og:description" content="your can modify the vim global config for all user or modify the local config for single user. the global config path is &#x2F;etc&#x2F;vim, you can touch a new file named vimrc.local 1234567891011121314151617">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-01-16T14:19:27.000Z">
+<meta property="article:modified_time" content="2022-12-12T10:15:46.065Z">
+<meta property="article:author" content="枫语疯言">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Vim">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">记文字</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiwenzi.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vim-config" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/16/vim-config/" class="article-date">
+  <time datetime="2019-01-16T14:19:27.000Z" itemprop="datePublished">2019-01-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vim config
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>your can modify the vim global config for all user or modify the local config for single user.</li>
+<li>the global config path is <code>/etc/vim</code>, you can touch a new file named <code>vimrc.local</code> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&quot; show line number</span><br><span class="line">set number</span><br><span class="line"></span><br><span class="line">&quot; show command in status line</span><br><span class="line">set showcmd</span><br><span class="line"></span><br><span class="line">&quot; show matching brackets</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line">&quot; case insensitive</span><br><span class="line">set ignorecase</span><br><span class="line"></span><br><span class="line">&quot; </span><br><span class="line">set hlsearch</span><br><span class="line"></span><br><span class="line">&quot; show cusor line</span><br><span class="line">set cursorline</span><br><span class="line"></span><br><span class="line">&quot;</span><br><span class="line">set incsearch</span><br><span class="line"></span><br><span class="line">&quot;</span><br><span class="line">set ruler</span><br><span class="line"></span><br><span class="line">&quot; auto </span><br><span class="line">set autoindent</span><br><span class="line"></span><br><span class="line">&quot; tab use 4 </span><br><span class="line">set tabstop=4</span><br><span class="line"></span><br><span class="line">&quot; use 4 space replace tab</span><br><span class="line">set softtabstop=4</span><br><span class="line"></span><br><span class="line">set shiftwidth=4</span><br><span class="line"></span><br><span class="line">&quot; use mouse</span><br><span class="line">set mouse=a</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiwenzi.com/2019/01/16/vim-config/" data-id="clhna8vxk0011ph8k21xv2yis" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/" rel="tag">Vim</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/25/interview-question-bank/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          interview question bank
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/16/start-https-with-Let-s-Encrypt/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">start https with Let&#39;s Encrypt</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 枫语疯言<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

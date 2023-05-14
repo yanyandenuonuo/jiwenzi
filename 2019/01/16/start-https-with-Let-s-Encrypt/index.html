@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>start https with Let&#39;s Encrypt | 记文字</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Reference document:  https:&#x2F;&#x2F;certbot.eff.org&#x2F;docs&#x2F;intro.html https:&#x2F;&#x2F;certbot.eff.org&#x2F;docs&#x2F;using.html   install certbot 123456$ apt-get update$ apt-get install software-properties-common$ add-apt-repos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="start https with Let&#39;s Encrypt">
+<meta property="og:url" content="https://jiwenzi.com/2019/01/16/start-https-with-Let-s-Encrypt/index.html">
+<meta property="og:site_name" content="记文字">
+<meta property="og:description" content="Reference document:  https:&#x2F;&#x2F;certbot.eff.org&#x2F;docs&#x2F;intro.html https:&#x2F;&#x2F;certbot.eff.org&#x2F;docs&#x2F;using.html   install certbot 123456$ apt-get update$ apt-get install software-properties-common$ add-apt-repos">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-01-16T13:26:59.000Z">
+<meta property="article:modified_time" content="2022-12-12T10:15:46.061Z">
+<meta property="article:author" content="枫语疯言">
+<meta property="article:tag" content="HTTPS">
+<meta property="article:tag" content="LetsEncrypt">
+<meta property="article:tag" content="Let&#39;sEncrypt">
+<meta property="article:tag" content="SSL&#x2F;TLS">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">记文字</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiwenzi.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-start-https-with-Let-s-Encrypt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/16/start-https-with-Let-s-Encrypt/" class="article-date">
+  <time datetime="2019-01-16T13:26:59.000Z" itemprop="datePublished">2019-01-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      start https with Let&#39;s Encrypt
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Reference document:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://certbot.eff.org/docs/intro.html">https://certbot.eff.org/docs/intro.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://certbot.eff.org/docs/using.html">https://certbot.eff.org/docs/using.html</a></li>
+</ul>
+<ol>
+<li>install certbot <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get update</span><br><span class="line">$ apt-get install software-properties-common</span><br><span class="line">$ add-apt-repository universe</span><br><span class="line">$ add-apt-repository ppa:certbot/certbot</span><br><span class="line">$ apt-get update</span><br><span class="line">$ apt-get install certbot</span><br></pre></td></tr></table></figure></li>
+<li>generate SSL&#x2F;TLS certificate file <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certbot certonly --webroot -w /var/www/html -d example.com --email your_email@example.com</span><br></pre></td></tr></table></figure></li>
+<li>then you can find the file in <code>/etc/letsencrypt/live/example.com/</code></li>
+<li>modify nginx config <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Session</span><br><span class="line">ssl_session_cache shared:SSL:32m;</span><br><span class="line">ssl_session_timeout 1d;</span><br><span class="line"></span><br><span class="line"># HSTS</span><br><span class="line">add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;  </span><br><span class="line"> </span><br><span class="line"># Forward Secrecy </span><br><span class="line">ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1 TLSv1;</span><br><span class="line">ssl_prefer_server_ciphers on;</span><br><span class="line">ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DHE+AES128:!ADH:!AECDH:!MD5;</span><br></pre></td></tr></table></figure></li>
+<li>then modify host config file and reload nginx</li>
+<li>now you can visit your website with https</li>
+<li>when ths certificate file is expired, you can execute <code>certbot renew</code> for update</li>
+<li>in addition, you can visit <a target="_blank" rel="noopener" href="https://www.ssllabs.com/ssltest/">https://www.ssllabs.com/ssltest/</a> to test your website<br> SSL&#x2F;TLS config</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiwenzi.com/2019/01/16/start-https-with-Let-s-Encrypt/" data-id="clhna8vxj000uph8k7u5ibhtc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/" rel="tag">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Let-sEncrypt/" rel="tag">Let&#39;sEncrypt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LetsEncrypt/" rel="tag">LetsEncrypt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSL-TLS/" rel="tag">SSL&#x2F;TLS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/16/vim-config/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vim config
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/13/add-swap-space-for-linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">add swap space for linux</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 枫语疯言<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

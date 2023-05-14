@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>tmux config | 记文字</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Reference document:  https:&#x2F;&#x2F;github.com&#x2F;tmux&#x2F;tmux https:&#x2F;&#x2F;wdxtub.com&#x2F;2016&#x2F;03&#x2F;30&#x2F;tmux-guide https:&#x2F;&#x2F;wiki.tankywoo.com&#x2F;tool&#x2F;tmux.html http:&#x2F;&#x2F;louiszhai.github.io&#x2F;2017&#x2F;09&#x2F;30&#x2F;tmux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tmux config">
+<meta property="og:url" content="https://jiwenzi.com/2019/01/13/tmux-config/index.html">
+<meta property="og:site_name" content="记文字">
+<meta property="og:description" content="Reference document:  https:&#x2F;&#x2F;github.com&#x2F;tmux&#x2F;tmux https:&#x2F;&#x2F;wdxtub.com&#x2F;2016&#x2F;03&#x2F;30&#x2F;tmux-guide https:&#x2F;&#x2F;wiki.tankywoo.com&#x2F;tool&#x2F;tmux.html http:&#x2F;&#x2F;louiszhai.github.io&#x2F;2017&#x2F;09&#x2F;30&#x2F;tmux">
+<meta property="og:locale">
+<meta property="article:published_time" content="2019-01-13T12:40:10.000Z">
+<meta property="article:modified_time" content="2022-12-12T10:15:46.061Z">
+<meta property="article:author" content="枫语疯言">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Tmux">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">记文字</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jiwenzi.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tmux-config" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/13/tmux-config/" class="article-date">
+  <time datetime="2019-01-13T12:40:10.000Z" itemprop="datePublished">2019-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tmux config
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Reference document:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/tmux/tmux">https://github.com/tmux/tmux</a></li>
+<li><a target="_blank" rel="noopener" href="https://wdxtub.com/2016/03/30/tmux-guide">https://wdxtub.com/2016/03/30/tmux-guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://wiki.tankywoo.com/tool/tmux.html">https://wiki.tankywoo.com/tool/tmux.html</a></li>
+<li><a target="_blank" rel="noopener" href="http://louiszhai.github.io/2017/09/30/tmux">http://louiszhai.github.io/2017/09/30/tmux</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jiwenzi.com/2019/01/13/tmux-config/" data-id="clhna8vxi000sph8k57h0gffu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tmux/" rel="tag">Tmux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/13/add-swap-space-for-linux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          add swap space for linux
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/13/change-linux-hostname/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">change linux hostname</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 枫语疯言<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
